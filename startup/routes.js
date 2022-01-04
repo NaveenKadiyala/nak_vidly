@@ -12,6 +12,11 @@ module.exports = function (app) {
     // A middleware function for handling JSON object
     app.use(express.json())
 
+    // default/home routing
+    app.get('/', (req, res) => {
+        res.send('This is a vidly application created by Naveen kadiyala, check the endpoints from github page')
+    })
+
     app.use('/api/genres', genreRouter)
 
     app.use('/api/customers', customerRouter)
